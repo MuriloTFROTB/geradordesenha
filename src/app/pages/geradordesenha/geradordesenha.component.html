@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card">
+        <h1>Criar Senha</h1>
+        <div class="card-caracteres">
+            <label for="inputTotalCarcteres">Quantidade de caracteres</label>
+            <input min="1" max="100" type="number" name="inputTotalCarcteres" id="inputTotalCarcteres"
+                (input)="quantasLetras($event)">
+        </div>
+        <ul>
+            <li>
+                <input type="checkbox" id="maiusculas" (change)="useMaiusculas()">
+                <label for="maiusculas">Incluir Letras Maiusculas</label>
+            </li>
+            <li>
+                <input type="checkbox" id="minusculas" (change)="useMinusculas()">
+                <label for="minusculas">incluir Letras Minusculas</label>
+            </li>
+            <li>
+                <input type="checkbox" id="numeros" (change)="useNumber()">
+                <label for="numeros">Incluir Numeros</label>
+            </li>
+            <li>
+                <input type="checkbox" id="simbolos" (change)="useSimbolos()">
+                <label for="simbolos">Incluir Simbolos</label>
+            </li>
+            <li>
+                <input type="checkbox" id="emoji" (change)="useEmoji()">
+                <label for="emoji">Incluir Emojis</label>
+            </li>
+        </ul>
+        <div class="card-password">
+
+            @if (password) {
+            <h1>Senha gerada</h1>
+            <h2 (click)="copiarSenha()">{{password}}</h2>
+            }
+        </div>
+        <button (click)="geradorDeSenha()">GERAR SENHA</button>
+    </div>
+</div>
